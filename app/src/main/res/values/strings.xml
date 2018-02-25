@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">VReader</string>
+    <string name="unknown">Unknown</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="action_settings">Settings</string>
+    <string name="club">Club</string>
+
+    <string name="dr_import">Import</string>
+    <string name="dr_gallery">Gallery</string>
+    <string name="dr_setting">Settings</string>
+    <string name="dr_communicate">Communicate</string>
+    <string name="dr_share">Share</string>
+    <string name="dr_send">Send</string>
+</resources>
