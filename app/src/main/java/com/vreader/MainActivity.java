@@ -1,5 +1,6 @@
 package com.vreader;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.design.widget.NavigationView;
@@ -37,6 +38,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
         pages = new ArrayList<Page>();
         for(int i = 0;i<1024;i++){
             Page p = new Page(i, "Page №"+String.valueOf(i));
@@ -78,6 +80,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         int id = item.getItemId();
         if (id == R.id.nav_import) {
         } else if (id == R.id.nav_gallery) {
+            Intent intent = new Intent(this, GalleryActivity.class);
+            startActivity(intent);
         } else if (id == R.id.nav_setting) {
         } else if (id == R.id.nav_send) {
         } else if (id == R.id.nav_share) {

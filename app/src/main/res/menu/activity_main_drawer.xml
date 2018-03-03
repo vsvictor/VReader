@@ -6,7 +6,7 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_import"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/ic_vr_import"
             android:title="@string/dr_import" />
         <item
             android:id="@+id/nav_gallery"
@@ -22,7 +22,7 @@
         <menu>
             <item
                 android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
+                android:icon="@drawable/ic_vr_share"
                 android:title="@string/dr_share" />
             <item
                 android:id="@+id/nav_send"

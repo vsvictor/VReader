@@ -14,29 +14,14 @@ import com.vreader.R;
 import static com.vreader.Constants.DATA;
 import static com.vreader.Constants.PAGE;
 
-public class TextFragment extends Fragment {
-    private int currentPage;
-    private String text;
+public class TextFragment extends BaseFragment {
     private TextView tvText;
 
     public TextFragment() {
     }
-    public static TextFragment newInstance(int page, String text) {
-        TextFragment fragment = new TextFragment();
-        Bundle args = new Bundle();
-        args.putInt(PAGE, page);
-        args.putString(DATA, text);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            this.currentPage = getArguments().getInt(PAGE);
-            this.text = getArguments().getString(DATA);
-        }
     }
 
     @Override
@@ -47,7 +32,6 @@ public class TextFragment extends Fragment {
     @Override
     public void onViewCreated(View view, Bundle data){
         tvText = view.findViewById(R.id.tvText);
-        tvText.setText(this.text);
     }
     @Override
     public void onAttach(Context context) {
@@ -57,5 +41,10 @@ public class TextFragment extends Fragment {
     @Override
     public void onDetach() {
         super.onDetach();
+    }
+
+    @Override
+    public void setData(String text) {
+        tvText.setText(text);
     }
 }

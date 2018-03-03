@@ -11,33 +11,29 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <LinearLayout
-            android:id="@+id/llHeader"
-            android:orientation="horizontal"
-            android:paddingLeft="@dimen/medium"
-            android:paddingRight="@dimen/medium"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="10">
-        </LinearLayout>
+            <fragment
+                android:id="@+id/frHeader"
+                android:name="com.vreader.fragments.HeaderFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="9" />
 
-        <LinearLayout
-            android:id="@+id/llText"
-            android:orientation="horizontal"
-            android:paddingLeft="@dimen/tiny"
-            android:paddingRight="@dimen/tiny"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1">
-        </LinearLayout>
+            <fragment
+                android:id="@+id/frText"
+                android:name="com.vreader.fragments.TextFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
 
-        <LinearLayout
-            android:id="@+id/llFooter"
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="10">
-        </LinearLayout>
+
+            <fragment
+                android:id="@+id/frFooter"
+                android:name="com.vreader.fragments.FooterFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="9" />
+
+
 
     </LinearLayout>
 

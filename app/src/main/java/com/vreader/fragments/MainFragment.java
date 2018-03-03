@@ -22,19 +22,18 @@ public class MainFragment extends Fragment {
     private int currentPage;
     private String text;
     private int countPage;
-    private HeaderFragment hf;
-    private TextFragment tf;
-    private FooterFragment ff;
-
+    private HeaderFragment frHeader;
+    private TextFragment frText;
+    private FooterFragment frFooter;
     public MainFragment() {
     }
     public static MainFragment newInstance(int page, String text, int count) {
         MainFragment fragment = new MainFragment();
-        Bundle args = new Bundle();
-        args.putInt(PAGE, page);
-        args.putString(DATA, text);
-        args.putInt(COUNT, count);
-        fragment.setArguments(args);
+        Bundle data = new Bundle();
+        data.putInt(PAGE,page);
+        data.putString(DATA, text);
+        data.putInt(COUNT, count);
+        fragment.setArguments(data);
         return fragment;
     }
 
@@ -45,9 +44,6 @@ public class MainFragment extends Fragment {
             currentPage = getArguments().getInt(PAGE);
             text = getArguments().getString(DATA);
             countPage = getArguments().getInt(COUNT);
-            hf = HeaderFragment.newInstance(currentPage);
-            tf = TextFragment.newInstance(currentPage, text);
-            ff = FooterFragment.newInstance(countPage);
         }
     }
     @Override
@@ -57,12 +53,12 @@ public class MainFragment extends Fragment {
     }
     @Override
     public void onViewCreated(View view, Bundle data){
-        getActivity().getSupportFragmentManager()
-                .beginTransaction()
-                .replace(R.id.llHeader,hf)
-                .replace(R.id.llText, tf)
-                .replace(R.id.llFooter, ff)
-                .commit();
+        frHeader = (HeaderFragment) getChildFragmentManager().findFragmentById(R.id.frHeader);
+        frHeader.setData(String.valueOf(currentPage));
+        frText = (TextFragment) getChildFragmentManager().findFragmentById(R.id.frText);
+        frText.setData("This is text in "+String.valueOf(currentPage)+" text");
+        frFooter = (FooterFragment) getChildFragmentManager().findFragmentById(R.id.frFooter);
+        frFooter.setData(String.valueOf(countPage));
     }
     @Override
     public void onAttach(Context context) {
@@ -73,4 +69,5 @@ public class MainFragment extends Fragment {
     public void onDetach() {
         super.onDetach();
     }
+
 }
