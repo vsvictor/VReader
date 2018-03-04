@@ -17,7 +17,9 @@ import com.vreader.data.Page;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+import static com.vreader.Constants.START_IMPORT;
+
+public class MainActivity extends BaseActivity implements NavigationView.OnNavigationItemSelectedListener {
     private static final String TAG = MainActivity.class.getSimpleName();
 
     private MainFragmentAdapter adapter;
@@ -79,6 +81,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public boolean onNavigationItemSelected(MenuItem item) {
         int id = item.getItemId();
         if (id == R.id.nav_import) {
+            Intent intent = new Intent(this, GalleryActivity.class);
+            intent.putExtra(START_IMPORT, true);
+            startActivity(intent);
         } else if (id == R.id.nav_gallery) {
             Intent intent = new Intent(this, GalleryActivity.class);
             startActivity(intent);

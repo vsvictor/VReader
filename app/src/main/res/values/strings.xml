@@ -15,6 +15,9 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="title_activity_gallery">GalleryActivity</string>
+    <string name="title_activity_gallery">Gallery</string>
+    <string name="gallery">Gallery</string>
     <string name="openfiledialog_title">Select a file</string>
+    <string name="title_activity_base">BaseActivity</string>
+    <string name="dirTag">dirTag</string>
 </resources>

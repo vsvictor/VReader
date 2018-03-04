@@ -8,13 +8,31 @@
     tools:context="com.vreader.GalleryActivity"
     tools:showIn="@layout/activity_gallery">
 
-    <LinearLayout
-        android:orientation="horizontal"
-        android:id="@+id/llFiles"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-    </LinearLayout>
+        <LinearLayout
+            android:id="@+id/llDirectory"
+            android:background="@color/light_black"
+            android:gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/large">
+            <fragment
+                android:id="@+id/frDirectory"
+                android:layout_gravity="center_vertical"
+                android:name="com.vreader.fragments.HeaderFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </LinearLayout>
 
+
+        <LinearLayout
+            android:id="@+id/llFiles"
+            android:layout_below="@id/llDirectory"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"/>
+    </RelativeLayout>
 
 </android.support.constraint.ConstraintLayout>

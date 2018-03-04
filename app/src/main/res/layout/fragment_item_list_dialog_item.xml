@@ -1,13 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/text"
+    android:id="@+id/cvFile"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="?attr/selectableItemBackground"
-    android:paddingBottom="@dimen/list_item_spacing_half"
-    android:paddingLeft="@dimen/list_item_spacing"
-    android:paddingRight="@dimen/list_item_spacing"
+    android:paddingBottom="@dimen/small"
+    android:paddingLeft="@dimen/medium"
+    android:paddingRight="@dimen/medium"
     android:paddingTop="@dimen/list_item_spacing_half"
-    android:textAppearance="@style/TextAppearance.AppCompat.Large"
-    tools:text="Hello" />
+    android:textAppearance="@style/TextAppearance.AppCompat.Large">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/ivFile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/small"
+            android:src="@drawable/ic_file" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/tvFile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/medium"
+            android:layout_toRightOf="@id/ivFile" />
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>

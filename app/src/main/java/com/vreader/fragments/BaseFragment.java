@@ -9,6 +9,9 @@ import android.view.ViewGroup;
 
 import com.vreader.R;
 
-public abstract class BaseFragment extends Fragment {
+public abstract class BaseFragment extends Fragment implements OnBackPressed{
     public abstract void setData(String data);
+    @Override
+    public void onBack(){
+    }
 }
