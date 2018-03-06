@@ -2,8 +2,6 @@ package com.fb2lib.types;
 
 import com.fb2lib.R;
 
-import javax.naming.Context;
-
 /**
  * Created by victor on 05.03.18.
  */

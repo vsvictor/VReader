@@ -1,4 +1,4 @@
-package com.vreader.Utils;
+package com.vreader.utils;
 
 import android.content.res.Resources;
 

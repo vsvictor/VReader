@@ -14,7 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.vreader.R;
-import com.vreader.Utils.Translate;
+import com.vreader.utils.Translate;
 import com.vreader.data.FileItem;
 import com.vreader.data.FileType;
 import com.vreader.fragments.OnBackPressed;
@@ -23,6 +23,7 @@ import java.io.File;
 import java.util.ArrayList;
 
 import static com.vreader.Constants.DATA;
+import static java.security.AccessController.getContext;
 
 public class OpenFileDialog extends BottomSheetDialogFragment implements OnBackPressed {
 

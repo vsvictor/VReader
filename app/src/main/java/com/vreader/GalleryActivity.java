@@ -15,6 +15,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.vreader.fragments.HeaderFragment;
+import com.vreader.reader.Reader;
 import com.vreader.views.OpenFileDialog;
 
 import java.io.File;
@@ -103,6 +104,9 @@ public class GalleryActivity extends BaseActivity implements OpenFileDialog.List
     @Override
     public void onFile(String filename) {
         Toast.makeText(this,filename, Toast.LENGTH_LONG).show();
+        String folder = sh.getString(LAST_FOLDER,"");
+        Reader reader = new Reader();
+        reader.read(folder+File.separator+filename);
     }
 
     @Override
