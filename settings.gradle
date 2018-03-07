@@ -1,1 +1,1 @@
-include ':app', ':fb2lib'
+include ':app', ':fb2lib', ':xmlserialozation'

@@ -1,4 +1,4 @@
-package com.fb2lib.types;
+package com.fb2lib.model.description;
 
 import com.fb2lib.R;
 

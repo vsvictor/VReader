@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/VReader.iml" filepath="$PROJECT_DIR$/VReader.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/fb2lib/fb2lib.iml" filepath="$PROJECT_DIR$/fb2lib/fb2lib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/xmlserialozation/xmlserialozation.iml" filepath="$PROJECT_DIR$/xmlserialozation/xmlserialozation.iml" />
     </modules>
   </component>
 </project>
