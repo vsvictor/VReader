@@ -31,37 +31,19 @@ import static org.xmlpull.v1.XmlPullParser.START_TAG;
 
 public class FB2Book extends XMLModel {
     private static final String TAG = FB2Book.class.getSimpleName();
-    @SerializedXML(tagName = "description")
+    @SerializedXML("description")
     private FB2Description description;
-    //@SerializedName("body")
+    @SerializedXML("body")
     private FB2Body body;
-    //@SerializedName("binary")
+    @SerializedXML("binary")
     private FB2Binary binary;
 
-    private File file;
-    private String fileName;
 
-    public FB2Book() {
+    public FB2Book(){
         super();
-    }
-
-    public FB2Book(String fileName) {
-        super();
-        this.fileName = fileName;
-    }
-
-    public String load(String fileName) throws IOException {
-        file = new File(fileName);
-        StringBuilder buider = new StringBuilder();
-        BufferedReader br = new BufferedReader(new FileReader(file));
-        String line;
-
-        while ((line = br.readLine()) != null) {
-            buider.append(line);
-            buider.append('\n');
-        }
-        br.close();
-        return buider.toString();
+        description = new FB2Description();
+        body = new FB2Body();
+        binary = new FB2Binary();
     }
 
     public FB2Description getDescription() {

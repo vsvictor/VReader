@@ -15,19 +15,20 @@ import java.util.ArrayList;
  */
 
 public class FB2Description extends XMLModel {
-    @SerializedXML(tagName = "title-info")
+    @SerializedXML("title-info")
     private TitleInfo titleInfo;
-    //@SerializedName("src-title-info")
     private SrcTitleInfo srcTitleInfo;
-    //@SerializedName("document-info")
     private DocumentInfo documentInfo;
-    //@SerializedName("publish-info")
     private PublishInfo publishInfo;
-    //@SerializedName("custom-info")
     private ArrayList<CustomInfo> customInfo;
 
     public FB2Description(){
         super();
+        titleInfo = new TitleInfo();
+        srcTitleInfo = new SrcTitleInfo();
+        documentInfo = new DocumentInfo();
+        publishInfo = new PublishInfo();
+        customInfo = new ArrayList<CustomInfo>();
     }
 
     public TitleInfo getTitleInfo() {

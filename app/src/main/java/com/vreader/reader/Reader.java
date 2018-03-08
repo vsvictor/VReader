@@ -17,11 +17,11 @@ public class Reader {
     }
     public void read(String fileName){
         try {
-            String sData = book.load(fileName);
-            //book = book.getParser().fromXml(new StringReader(sData), FB2Book.class);
-        } catch (IOException e) {
+            book.fromFile(fileName);
+            int i = 0;
+            i++;
+        } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
 }

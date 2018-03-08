@@ -12,7 +12,7 @@ public class BookDate {
     private Date date;
     private int year;
 
-    private BookDate(){
+    public BookDate(){
         this.date = new Date();
         this.year = this.date.getYear();
     }
