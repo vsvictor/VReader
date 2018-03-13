@@ -16,7 +16,7 @@ import java.util.Locale;
 public class TitleInfo extends XMLModel{
     //@SerializedXML("genre")
     private ArrayList<Genre> genres;
-    //@SerializedXML("author")
+    @SerializedXML("author")
     private ArrayList<Human> authors;
     @SerializedXML("book-title")
     private String bookTitle;

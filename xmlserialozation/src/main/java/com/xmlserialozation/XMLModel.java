@@ -21,6 +21,8 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.lang.reflect.Field;
+import java.lang.reflect.ParameterizedType;
+import java.lang.reflect.Type;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -73,6 +75,8 @@ public abstract class XMLModel {
                     String tag = ser.value();
                     Log.i(TAG, "Annotation value: "+tag);
                     if(!f.getDeclaringClass().isPrimitive() &&
+                            !f.getDeclaringClass().isArray() &&
+                            !f.getDeclaringClass().isEnum() &&
                             !f.getType().getSimpleName().equals("String") &&
                             !f.getType().getSimpleName().equals("Integer") &&
                             !f.getType().getSimpleName().equals("Long") &&
@@ -86,28 +90,38 @@ public abstract class XMLModel {
 
                         parse(f.getType(), f.get(obj));
                     }else{
-                        NodeList list = doc.getElementsByTagName(tag);
-                        if(list != null && list.getLength() > 0) {
-                            String s = list.item(0).getFirstChild().getNodeValue();
-                            try {
-                                Log.i(TAG, "Field name: "+f.getName());
-                                f.set(obj, s);
-                                Log.i(TAG,"Value is set: "+s);
-                            }catch (IllegalArgumentException ex){
-                                Log.i(TAG, "Field type: "+f.getType().getSimpleName());
-                                Log.i(TAG, "value: "+s);
-                                ex.printStackTrace();
-                            }
+                        Log.i(TAG, "Else Field type: "+f.getType().getName());
+                        Log.i(TAG, "Else Field Simple type: "+f.getType().getSimpleName());
+                        if(f.getDeclaringClass().isPrimitive() || f.getType().getSimpleName().equals("String")) {
+                            NodeList list = doc.getElementsByTagName(tag);
+                            if (list != null && list.getLength() > 0) {
+                                String s = list.item(0).getFirstChild().getNodeValue();
+                                try {
+                                    Log.i(TAG, "Field name: " + f.getName());
+                                    f.set(obj, s);
+                                    Log.i(TAG, "Value is set: " + s);
+                                } catch (IllegalArgumentException ex) {
+                                    Log.i(TAG, "Field type: " + f.getType().getSimpleName());
+                                    Log.i(TAG, "value: " + s);
+                                    ex.printStackTrace();
+                                }
 
+                            }
+                        }else if(f.getDeclaringClass().isArray()){
+
+                        }else if(f.getType().getSimpleName().equals("ArrayList")){
+                            Type t =   f.getGenericType();
+                            if(t instanceof ParameterizedType){
+                                ParameterizedType pt = (ParameterizedType) t;
+                                Log.i(TAG, "Instance type: "+t.toString());
+
+                            }
                         }
+
                     }
                 }
             }
 
-
         }
-
-
-
     }
 }
